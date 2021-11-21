@@ -79,10 +79,10 @@
             them from the other giant planets. Uranus's atmosphere is similar to
             Jupiter's and Saturn's in its primary composition of hydrogen and
             helium, but it contains more "ices" such as water, ammonia, and
-            methane, along with traces of other hydrocarbons. It has the
-            coldest planetary atmosphere in the Solar System, with a minimum
-            temperature of 49 K (−224 °C; −371 °F), and has a complex, layered
-            cloud structure with water thought to make up the lowest clouds and
+            methane, along with traces of other hydrocarbons. It has the coldest
+            planetary atmosphere in the Solar System, with a minimum temperature
+            of 49 K (−224 °C; −371 °F), and has a complex, layered cloud
+            structure with water thought to make up the lowest clouds and
             methane the uppermost layer of clouds. The interior of Uranus is
             mainly composed of ices and rock.
           </v-col>
@@ -93,6 +93,12 @@
         </v-row>
       </v-content>
     </v-main>
+
+    <v-footer absolute app color="grey darken-2" dark>
+      <v-col class="text-center pa-0" cols="12">
+        {{ new Date().getFullYear() }} — <strong>Planetarium</strong>
+      </v-col>
+    </v-footer>
   </v-app>
 </template>
 
