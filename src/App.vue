@@ -2,6 +2,7 @@
   <v-app>
     <!-- System Bar -->
     <v-system-bar dark app color="grey darken-3">
+      Home > Recent
       <v-spacer></v-spacer>
       <v-icon>mdi-wifi-strength-4</v-icon>
       <v-icon>mdi-signal-cellular-outline</v-icon>
@@ -11,7 +12,7 @@
 
     <!-- App bar  -->
     <v-app-bar color="grey darken-4" dark app absolute clipped-left>
-      <v-icon left>mdi-earth</v-icon>
+      <v-icon left>mdi-ufo-outline</v-icon>
       <v-toolbar-title>Planetarium</v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -45,7 +46,7 @@
 
       <v-list>
         <v-subheader>PLANETS</v-subheader>
-        <v-list-item-group v-model="selectedItem" color="">
+        <v-list-item-group v-model="selectedNavbarItem" color="">
           <v-list-item v-for="item in navbarItems" :key="item.title" link>
             <v-list-item-icon>
               <v-icon v-if="item.favorite" color="#ffda21"> mdi-star </v-icon>
@@ -94,11 +95,31 @@
       </v-content>
     </v-main>
 
-    <v-footer absolute app color="grey darken-2" dark>
+    <v-footer absolute app color="grey darken-3" dark>
       <v-col class="text-center pa-0" cols="12">
         {{ new Date().getFullYear() }} — <strong>Planetarium</strong>
       </v-col>
     </v-footer>
+
+    <v-bottom-navigation app dark v-model="selectedBottombarItem">
+      <v-btn value="recent">
+        <span>Recent</span>
+
+        <v-icon>mdi-rocket-launch-outline</v-icon>
+      </v-btn>
+
+      <v-btn value="favorites">
+        <span>Favorites</span>
+
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+
+      <v-btn value="nearby">
+        <span>Nearby</span>
+
+        <v-icon>mdi-map-marker</v-icon>
+      </v-btn>
+    </v-bottom-navigation>
   </v-app>
 </template>
 
@@ -132,7 +153,8 @@ export default {
         title: "Mars",
       },
     ],
-    selectedItem: 0,
+    selectedNavbarItem: 0,
+    selectedBottombarItem: 0,
   }),
 };
 </script>
