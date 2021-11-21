@@ -11,7 +11,7 @@
     </v-system-bar>
 
     <!-- App bar  -->
-    <v-app-bar color="grey darken-4" dark app absolute clipped-left>
+    <v-app-bar dark app absolute clipped-left elevation="0">
       <v-icon left>mdi-ufo-outline</v-icon>
       <v-toolbar-title>Planetarium</v-toolbar-title>
 
@@ -27,9 +27,9 @@
 
     <!-- Navigation Drawer -->
     <v-navigation-drawer dark app permanent absolute clipped>
-      <v-sheet class="pa-1">
+      <div>
         <v-list-item>
-          <v-list-item-avatar color="grey darken-2" size="64">
+          <v-list-item-avatar color="grey lighten-2" size="64">
             <v-img src="./assets/Elgyem.png"></v-img>
           </v-list-item-avatar>
 
@@ -40,7 +40,7 @@
             <v-list-item-subtitle>elgyem@gmail.com</v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
-      </v-sheet>
+      </div>
 
       <v-divider></v-divider>
 
@@ -63,7 +63,7 @@
 
     <!-- Content -->
     <v-main class="pa-0">
-      <v-content style="background-color: #2b2b2b; height: 100%">
+      <v-content style="background-color: #303030; height: 100%">
         <v-row style="color: white" class="pa-4" justify="space-around">
           <v-col cols="7" style="text-align: justify">
             <h1>Uranus</h1>
@@ -95,7 +95,7 @@
       </v-content>
     </v-main>
 
-    <v-footer absolute app color="grey darken-3" dark>
+    <v-footer absolute app dark>
       <v-col class="text-center pa-0" cols="12">
         {{ new Date().getFullYear() }} — <strong>Planetarium</strong>
       </v-col>
