@@ -1,5 +1,8 @@
 # 🪐 Planetarium
 Final result:
+<p align="center">
+<img src="./src/assets/FinalResult.png">
+</p>
 
 ## 💻 Running The Project
 Firstly, clone the repository with the command:
