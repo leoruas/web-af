@@ -95,12 +95,14 @@
       </v-content>
     </v-main>
 
+    <!-- Footer -->
     <v-footer absolute app dark>
       <v-col class="text-center pa-0" cols="12">
         {{ new Date().getFullYear() }} — <strong>Planetarium</strong>
       </v-col>
     </v-footer>
 
+    <!-- Bottom Navigation -->
     <v-bottom-navigation app dark v-model="selectedBottombarItem">
       <v-btn value="recent">
         <span>Recent</span>
