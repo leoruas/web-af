@@ -17,12 +17,17 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi-alien</v-icon>
-      </v-btn>
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
+      <div v-for="(item, i) in items" :key="i">
+        <v-btn text class="mx-1" @click="$router.push(item.url)">
+          {{ item.title }}
+        </v-btn>
+      </div>
     </v-app-bar>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["items"],
+};
+</script>

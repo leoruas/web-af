@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Toolbar />
+    <Toolbar :items="navbarItems" />
 
     <!-- Navigation Drawer -->
     <v-navigation-drawer dark app permanent absolute clipped>
@@ -22,12 +22,15 @@
       <v-divider></v-divider>
 
       <v-list>
-        <v-subheader>PLANETS</v-subheader>
         <v-list-item-group v-model="selectedNavbarItem" color="">
-          <v-list-item v-for="item in navbarItems" :key="item.title" link>
+          <v-list-item
+            v-for="item in navbarItems"
+            :key="item.title"
+            link
+            @click="$router.push(item.url)"
+          >
             <v-list-item-icon>
-              <v-icon v-if="item.favorite" color="#ffda21"> mdi-star </v-icon>
-              <v-icon v-else> mdi-star-outline </v-icon>
+              <v-icon> {{ item.icon }} </v-icon>
             </v-list-item-icon>
 
             <v-list-item-content>
@@ -52,22 +55,10 @@
 
     <!-- Bottom Navigation -->
     <v-bottom-navigation app dark v-model="selectedBottombarItem">
-      <v-btn value="recent">
-        <span>Recent</span>
+      <v-btn v-for="(item, i) in navbarItems" :key="i" @click="$router.push(item.url)">
+        <span>{{item.title}}</span>
 
-        <v-icon>mdi-rocket-launch-outline</v-icon>
-      </v-btn>
-
-      <v-btn value="favorites">
-        <span>Favorites</span>
-
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn value="nearby">
-        <span>Nearby</span>
-
-        <v-icon>mdi-map-marker</v-icon>
+        <v-icon>{{item.icon}}</v-icon>
       </v-btn>
     </v-bottom-navigation>
   </v-app>
@@ -79,33 +70,33 @@ import Toolbar from "@/components/Toolbar.vue";
 export default {
   name: "App",
   components: {
-    Toolbar
+    Toolbar,
   },
   data: () => ({
     navbarItems: [
       {
         favorite: true,
-        title: "Uranus",
+        title: "Home",
+        icon: "mdi-home",
+        url: "/",
       },
       {
         favorite: true,
-        title: "Earth",
+        title: "Recents",
+        icon: "mdi-rocket-launch-outline",
+        url: "/recents",
       },
       {
         favorite: false,
-        title: "Jupiter",
+        title: "Favorites",
+        icon: "mdi-heart",
+        url: "/favorites",
       },
       {
         favorite: true,
-        title: "Saturn",
-      },
-      {
-        favorite: false,
-        title: "Neptune",
-      },
-      {
-        favorite: true,
-        title: "Mars",
+        title: "Nearby",
+        icon: "mdi-map-marker",
+        url: "/nearby",
       },
     ],
     selectedNavbarItem: 0,
