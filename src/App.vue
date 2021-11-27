@@ -3,7 +3,7 @@
     <Toolbar :items="navbarItems" />
 
     <!-- Navigation Drawer -->
-    <v-navigation-drawer dark app permanent absolute clipped>
+    <v-navigation-drawer dark app permanent absolute clipped style="height: 100%">
       <div>
         <v-list-item>
           <v-list-item-avatar color="grey lighten-2" size="64">
