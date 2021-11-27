@@ -2,7 +2,6 @@
   <div>
     <!-- System Bar -->
     <v-system-bar dark app color="grey darken-3">
-      Home > Recent
       <v-spacer></v-spacer>
       <v-icon>mdi-wifi-strength-4</v-icon>
       <v-icon>mdi-signal-cellular-outline</v-icon>
