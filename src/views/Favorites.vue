@@ -1,6 +1,6 @@
 <template>
   <v-content style="background-color: #303030; height: 100%">
-    <v-row style="color: white" class="pa-4" >
+    <v-row style="color: white" class="pa-4">
       <v-col cols="12" style="text-align: justify">
         <h1>Favorites</h1>
         <v-divider class="background-color: white mb-3"></v-divider>
@@ -20,15 +20,15 @@ import PlanetCard from "@/components/PlanetCard.vue";
 
 export default {
   components: {
-    PlanetCard
+    PlanetCard,
   },
   computed: {
     planets() {
       return this.$store.state.planets;
     },
     favorites() {
-      return this.planets.filter(planet => planet.isFavorite)
-    }
+      return this.planets.filter((planet) => planet.isFavorite);
+    },
   },
 };
 </script>
