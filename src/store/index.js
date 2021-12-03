@@ -80,4 +80,15 @@ export default new Vuex.Store({
       },
     ]
   },
+  getters: {
+    favorites(state) {
+      return state.planets.filter((planet) => planet.isFavorite);
+    },
+    nearby(state) {
+      return state.planets.filter((planet) => planet.isNearby);
+    },
+    recents(state) {
+      return state.planets.filter((planet) => planet.isRecent);
+    }
+  }
 })

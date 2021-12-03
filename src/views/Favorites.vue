@@ -23,11 +23,8 @@ export default {
     PlanetCard,
   },
   computed: {
-    planets() {
-      return this.$store.state.planets;
-    },
     favorites() {
-      return this.planets.filter((planet) => planet.isFavorite);
+      return this.$store.getters.favorites;
     },
   },
 };

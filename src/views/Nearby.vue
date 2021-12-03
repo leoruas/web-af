@@ -6,7 +6,7 @@
         <v-divider class="background-color: white mb-3"></v-divider>
 
         <v-row>
-          <v-col v-for="(planet, p) in recents" :key="p" cols="3">
+          <v-col v-for="(planet, p) in nearby" :key="p" cols="3">
             <PlanetCard :planet="planet" />
           </v-col>
         </v-row>
@@ -23,11 +23,8 @@ export default {
     PlanetCard,
   },
   computed: {
-    planets() {
-      return this.$store.state.planets;
-    },
-    recents() {
-      return this.planets.filter((planet) => planet.isNearby);
+    nearby() {
+      return this.$store.getters.nearby;
     },
   },
 };
