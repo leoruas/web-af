@@ -1,5 +1,5 @@
 <template>
-  <v-content style="background-color: #303030; height: 100%">
+  <v-main style="background-color: #303030; height: 100%">
     <v-row style="color: white" class="pa-4">
       <v-col cols="12" style="text-align: justify">
         <h1>Home</h1>
@@ -12,7 +12,7 @@
         </v-row>
       </v-col>
     </v-row>
-  </v-content>
+  </v-main>
 </template>
 
 <script>

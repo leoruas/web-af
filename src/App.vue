@@ -102,5 +102,8 @@ export default {
     selectedNavbarItem: 0,
     selectedBottombarItem: 0,
   }),
+  beforeMount() {
+    this.$store.dispatch("getPlanets")
+  }
 };
 </script>
