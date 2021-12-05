@@ -1,5 +1,5 @@
 # 🪐 Planetarium
-AF2 - Final Result:
+AF2/AF3 - Final Result:
 
 - Home Screen
 <p align="center">
